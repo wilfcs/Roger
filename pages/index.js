@@ -10,7 +10,7 @@ export default function Home() {
   }
 
   // Fucntion for updating Input Values
-  const [resultant, setResultant] = useState("")
+  const [resultant, setResultant] = useState("");
   const [val, setVal] = useState("");
   const [time, setTime] = useState("60");
 
@@ -62,10 +62,27 @@ export default function Home() {
   };
   // The end of Function
 
-  // Resultant Function 
-  const resultHandler= ()=>{
-    if()
-  }
+  // Resultant Function
+  const resultHandler = () => {
+    var str = "";
+    let count = 0;
+    setResultant("");
+
+    for (let i = 0; i < val.length; i++) {
+      if (val[i] != " ") {
+        if (val[i] == ".") {
+          str += "0";
+        } else if (val[i] == "-") {
+          str += "1";
+        }
+      } else {
+        if (str == "0") {
+          setResultant(`${resultant}${str}`);
+        }
+        str = "";
+      }
+    }
+  };
 
   // Adding Effect
   const [firstLoad, setFirstLoad] = useState(1);
@@ -114,7 +131,15 @@ export default function Home() {
           <div className="logo"></div>
           <div className="brandName">Roger</div>
 
-          <input type="text" className="showMorse" value={val} onChange={(e)=>setVal(e.target.val) } />
+          <input
+            type="text"
+            className="showMorse"
+            value={val}
+            onChange={(e) => {
+              setVal(e.target.val);
+              resultHandler();
+            }}
+          />
           <input type="text" className="showText" value={resultant} />
         </div>
 
