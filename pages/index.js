@@ -87,19 +87,19 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet"/> </Head> */}
 
       {/* <div className={` ${styles.mishra} `}>sdjfl;kasdjflkjds</div> */}
-      <span className={styles.topJson} ref={container2}></span>
-      <div className={styles.content}>
-        <div className={styles.brand}>
-          <div className={styles.logo}></div>
-          <div className={styles.brandName}>Roger</div>
+      <span className="topJson" ref={container2}></span>
+      <div className="content">
+        <div className="brand">
+          <div className="logo"></div>
+          <div className="brandName">Roger</div>
 
-          <input type="text" className={styles.showMorse} value={val} />
-          <input type="text" className={styles.showText} />
+          <input type="text" className="showMorse" value={val} />
+          <input type="text" className="showText" />
         </div>
 
-        <div className={styles.body}>
+        <div className="body">
           <div
-            className={styles.bigButton}
+            className="bigButton"
             id="bigButton"
             onMouseDown={click}
             onMouseUp={click}
@@ -112,7 +112,157 @@ export default function Home() {
 
         
       </div>
-      <span className={styles.bottomJson} ref={container}></span>
+      <span className="bottomJson" ref={container}></span>
+
+
+
+
+
+      <style jsx>
+        {
+          `
+          input:focus{
+            border: none;
+            overflow: auto;
+            outline: none;
+          }
+
+          .content{
+            height: 100vh;
+            width: 100vw;
+            background-color: #c4c4cd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+          }
+          .body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c4c4cd;
+            z-index: 999;
+          }
+          .bigButton{
+          
+          box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+          -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+          font-size: 5rem;
+          width: 200px;
+          height: 200px;
+          border-radius: 40px;
+          overflow: hidden;
+          padding: 1.3rem;
+          display: flex;
+            justify-content: space-around;
+            align-items: center;
+          
+          border: none;
+          cursor: pointer;
+          border-radius: 400px;
+          height: 500px;
+          width: 500px;
+          
+          }
+          .bigButton:active{
+           
+             box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+             inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+          
+          
+          }
+          
+          .brand{
+               position: fixed;
+              top: 28px;
+              left: 54px;
+          }
+          .logo{
+              height: 55px;
+              width: 55px;
+             background-color: #a9a9b3;
+             border-radius: 50%;
+            }
+          
+            .brandName{
+              font-family: 'Work Sans',
+              sans-serif;
+              position: absolute;
+              top: 7px;
+              left: 71px;
+              font-size: 30px;
+              color: #81818b;
+            }
+          
+            .showMorse{
+          
+              box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+              width: 250px;
+              height: 30px;
+              border-radius: 40px;
+              overflow: hidden;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+          
+              border: none;
+          
+                 box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+                 inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+                   background-color: #c4c4cd;
+          
+                padding: 0 1rem;
+                position: relative;
+                top: -51px;
+                left: 70vw;
+          
+          
+            }
+          
+            .showText{
+                  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+                  -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+                  width: 250px;
+                  height: 30px;
+                  border-radius: 40px;
+                  overflow: hidden;
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+          
+                  border: none;
+          
+                  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+                  inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+                  background-color: #c4c4cd;
+          
+                  padding: 0 1rem;
+                  position: relative;
+                  top: -42px;
+                  left: 70vw;
+            }
+            .bottomJson{
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              height: 300px;
+              width: 33rem;
+            }
+          
+            
+          
+            .topJson{
+              position: fixed;
+              right: 0;
+              top: 0;
+              width: 33rem;
+              height: 300px;
+              overflow: hidden;
+            }
+          `
+        }
+      </style>
 
     </>
   );
