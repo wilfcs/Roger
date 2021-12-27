@@ -3,7 +3,11 @@ import React from 'react'
 import Image from 'next/image';
 function Header() {
     return (
-        <Image src="/images/wp5048666.png" width={100} height={100} alt="Morse Code" />
+        <div>
+             <Image src="/images/wp5048666.png" width={500} height={600} alt="Morse Code" />
+        </div>
+       
+
         
     )
 }
