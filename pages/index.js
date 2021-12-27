@@ -11,31 +11,51 @@ export default function Home() {
 
   // Fucntion for updating Input Values
   const [val, setVal] = useState("");
-  const [time, setTime] = useState("0");
+  const [time, setTime] = useState("60");
 
   let startClick = 0;
+  // Click Function
   const click = (e) => {
     const d = new Date();
     let s = d.getSeconds();
-    if (parseInt(s) - parseInt(time) > 1.5) {
-      setVal(`${val} / `);
-      setTime(s);
-    }
+
     if (e.type == "mousedown") {
       startClick = e.timeStamp;
     } else if (e.type == "mouseup" && startClick > 0) {
       if (e.timeStamp - startClick > 500) {
-        // 0.5 secound
-        setVal(`${val} -`);
-        const d = new Date();
-        let s = d.getSeconds();
-        setTime(s);
+        if (parseInt(s) - parseInt(time) >= 2.5) {
+          setVal(`${val} /-`);
+          const d = new Date();
+          let s = d.getSeconds();
+          setTime(s);
+        } else if (parseInt(s) - parseInt(time) >= 1.5) {
+          setVal(`${val} -`);
+          const d = new Date();
+          let s = d.getSeconds();
+          setTime(s);
+        } else {
+          setVal(`${val}-`);
+          const d = new Date();
+          let s = d.getSeconds();
+          setTime(s);
+        }
       } else {
-        const d = new Date();
-
-        let s = d.getSeconds();
-        setTime(s);
-        setVal(`${val} .`);
+        if (parseInt(s) - parseInt(time) >= 2.5) {
+          setVal(`${val} /.`);
+          const d = new Date();
+          let s = d.getSeconds();
+          setTime(s);
+        } else if (parseInt(s) - parseInt(time) >= 1.5) {
+          setVal(`${val} .`);
+          const d = new Date();
+          let s = d.getSeconds();
+          setTime(s);
+        } else {
+          setVal(`${val}.`);
+          const d = new Date();
+          let s = d.getSeconds();
+          setTime(s);
+        }
       }
     }
   };
@@ -66,18 +86,13 @@ export default function Home() {
       }
     );
 
-    lottie.loadAnimation(
-      {
-        container: container2.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        animationData: require("../Json/top.json"),
-      }
-    );
-
-
-    
+    lottie.loadAnimation({
+      container: container2.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("../Json/top.json"),
+    });
   }, [firstLoad]);
 
   return (
@@ -109,161 +124,140 @@ export default function Home() {
             Your browser does not support the audio element.
           </audio>
         </div>
-
-        
       </div>
       <span className="bottomJson" ref={container}></span>
 
-
-
-
-
       <style jsx>
-        {
-          `
-          input:focus{
+        {`
+          input:focus {
             border: none;
             overflow: auto;
             outline: none;
           }
 
-          .content{
+          .content {
             height: 100vh;
             width: 100vw;
             background-color: #c4c4cd;
             display: flex;
             align-items: center;
             justify-content: center;
-            
           }
-          .body{
+          .body {
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #c4c4cd;
             z-index: 999;
           }
-          .bigButton{
-          
-          box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
-          -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
-          font-size: 5rem;
-          width: 200px;
-          height: 200px;
-          border-radius: 40px;
-          overflow: hidden;
-          padding: 1.3rem;
-          display: flex;
+          .bigButton {
+            box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+            font-size: 5rem;
+            width: 200px;
+            height: 200px;
+            border-radius: 40px;
+            overflow: hidden;
+            padding: 1.3rem;
+            display: flex;
             justify-content: space-around;
             align-items: center;
-          
-          border: none;
-          cursor: pointer;
-          border-radius: 400px;
-          height: 500px;
-          width: 500px;
-          
-          }
-          .bigButton:active{
-           
-             box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
-             inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
-          
-          
-          }
-          
-          .brand{
-               position: fixed;
-              top: 28px;
-              left: 54px;
-          }
-          .logo{
-              height: 55px;
-              width: 55px;
-             background-color: #a9a9b3;
-             border-radius: 50%;
-            }
-          
-            .brandName{
-              font-family: 'Work Sans',
-              sans-serif;
-              position: absolute;
-              top: 7px;
-              left: 71px;
-              font-size: 30px;
-              color: #81818b;
-            }
-          
-            .showMorse{
-          
-              box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
-              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
-              width: 250px;
-              height: 30px;
-              border-radius: 40px;
-              overflow: hidden;
-              display: flex;
-              justify-content: space-around;
-              align-items: center;
-          
-              border: none;
-          
-                 box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
-                 inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
-                   background-color: #c4c4cd;
-          
-                padding: 0 1rem;
-                position: relative;
-                top: -51px;
-                left: 70vw;
-          
-          
-            }
-          
-            .showText{
-                  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
-                  -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
-                  width: 250px;
-                  height: 30px;
-                  border-radius: 40px;
-                  overflow: hidden;
-                  display: flex;
-                  justify-content: space-around;
-                  align-items: center;
-          
-                  border: none;
-          
-                  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
-                  inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
-                  background-color: #c4c4cd;
-          
-                  padding: 0 1rem;
-                  position: relative;
-                  top: -42px;
-                  left: 70vw;
-            }
-            .bottomJson{
-              position: fixed;
-              left: 0;
-              bottom: 0;
-              height: 300px;
-              width: 33rem;
-            }
-          
-            
-          
-            .topJson{
-              position: fixed;
-              right: 0;
-              top: 0;
-              width: 33rem;
-              height: 300px;
-              overflow: hidden;
-            }
-          `
-        }
-      </style>
 
+            border: none;
+            cursor: pointer;
+            border-radius: 400px;
+            height: 500px;
+            width: 500px;
+          }
+          .bigButton:active {
+            box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+              inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+          }
+
+          .brand {
+            position: fixed;
+            top: 28px;
+            left: 54px;
+          }
+          .logo {
+            height: 55px;
+            width: 55px;
+            background-color: #a9a9b3;
+            border-radius: 50%;
+          }
+
+          .brandName {
+            font-family: "Work Sans", sans-serif;
+            position: absolute;
+            top: 7px;
+            left: 71px;
+            font-size: 30px;
+            color: #81818b;
+          }
+
+          .showMorse {
+            box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+            width: 250px;
+            height: 30px;
+            border-radius: 40px;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            border: none;
+
+            box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+              inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+            background-color: #c4c4cd;
+
+            padding: 0 1rem;
+            position: relative;
+            top: -51px;
+            left: 70vw;
+          }
+
+          .showText {
+            box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+            width: 250px;
+            height: 30px;
+            border-radius: 40px;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            border: none;
+
+            box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+              inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+            background-color: #c4c4cd;
+
+            padding: 0 1rem;
+            position: relative;
+            top: -42px;
+            left: 70vw;
+          }
+          .bottomJson {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 300px;
+            width: 33rem;
+          }
+
+          .topJson {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 33rem;
+            height: 300px;
+            overflow: hidden;
+          }
+        `}
+      </style>
     </>
   );
 }
