@@ -32,6 +32,7 @@
   justify-content: center;
   align-items: center;
   background-color: #c4c4cd;
+  z-index: 999;
 }
 .bigButton{
 
@@ -138,11 +139,14 @@ width: 500px;
     left: 0;
     bottom: 0;
     height: 42vh;
+    width: 33rem;
   }
 
   .topJson{
     position: fixed;
     right: 0;
     top: 0;
+    width: 33rem;
     height: 42vh;
+    overflow: hidden;
   }
