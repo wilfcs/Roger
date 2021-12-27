@@ -111,8 +111,9 @@ export default function Home() {
         </div>
 
         
-        <span className={styles.bottomJson} ref={container}></span>
       </div>
+      <span className={styles.bottomJson} ref={container}></span>
+
     </>
   );
 }
