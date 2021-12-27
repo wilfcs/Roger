@@ -10,7 +10,7 @@ export default function Home() {
   }
 
   // Fucntion for updating Input Values
-  const [val, setVal] = useState(".");
+  const [val, setVal] = useState("");
   const [time, setTime] = useState("0");
 
   let startClick = 0;
