@@ -59,6 +59,7 @@ export default function Home() {
         }
       }
     }
+    resultHandler();
   };
   // The end of Function
 
@@ -76,12 +77,91 @@ export default function Home() {
           str += "1";
         }
       } else {
-        if (str == "0") {
+        if (str == " ") {
           setResultant(`${resultant}${str}`);
+        }
+        if(str == "01"){
+          setResultant(`${resultant}a`);
+        }
+        else if(str == "1000"){
+          setResultant(`${resultant}b`);
+        }
+        else if(str == "1010"){
+          setResultant(`${resultant}c`);
+        }else if(str == "100"){
+          setResultant(`${resultant}d`);
+        }else if(str == "0"){
+          setResultant(`${resultant}e`);
+        }else if(str == "0010"){
+          setResultant(`${resultant}f`);
+        }else if(str == "110"){
+          setResultant(`${resultant}g`);
+        }else if(str == "0000"){
+          setResultant(`${resultant}h`);
+        }else if(str == "00"){
+          setResultant(`${resultant}i`);
+        }else if(str == "0111"){
+          setResultant(`${resultant}j`);
+        }else if(str == "101"){
+          setResultant(`${resultant}k`);
+        }else if(str == "0100"){
+          setResultant(`${resultant}l`);
+        }else if(str == "11"){
+          setResultant(`${resultant}m`);
+        }
+        else if(str == "10"){
+          setResultant(`${resultant}n`);
+        }else if(str == "111"){
+          setResultant(`${resultant}o`);
+        }else if(str == "0110"){
+          setResultant(`${resultant}p`);
+        }else if(str == "1101"){
+          setResultant(`${resultant}q`);
+        }else if(str == "010"){
+          setResultant(`${resultant}r`);
+        }else if(str == "000"){
+          setResultant(`${resultant}s`);
+        }else if(str == "1"){
+          setResultant(`${resultant}t`);
+        }else if(str == "001"){
+          setResultant(`${resultant}u`);
+        }else if(str == "0001"){
+          setResultant(`${resultant}v`);
+        }else if(str == "011"){
+          setResultant(`${resultant}w`);
+        }else if(str == "1001"){
+          setResultant(`${resultant}x`);
+        }else if(str == "1011"){
+          setResultant(`${resultant}y`);
+        }else if(str == "1100"){
+          setResultant(`${resultant}z`);
+        }
+
+        else if(str == "0111"){
+          setResultant(`${resultant}1`);
+        }else if(str == "00111"){
+          setResultant(`${resultant}2`);
+        }else if(str == "00011"){
+          setResultant(`${resultant}3`);
+        }else if(str == "00001"){
+          setResultant(`${resultant}4`);
+        }else if(str == "00000"){
+          setResultant(`${resultant}5`);
+        }else if(str == "10000"){
+          setResultant(`${resultant}6`);
+        }else if(str == "11000"){
+          setResultant(`${resultant}7`);
+        }else if(str == "11100"){
+          setResultant(`${resultant}8`);
+        }else if(str == "11110"){
+          setResultant(`${resultant}9`);
+        }else if(str == "11111"){
+          setResultant(`${resultant}0`);
         }
         str = "";
       }
     }
+
   };
 
   // Adding Effect
