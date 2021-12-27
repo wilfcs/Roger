@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../styles/Home.module.css'
+import lottie from 'lottie-web'
+
 
 
 export default function Home() {
@@ -24,9 +25,7 @@ export default function Home() {
           setTime(s);
   
       }
-  
         if(e.type == "mousedown"){
-  
           startClick = e.timeStamp;
         }
         else if(e.type == "mouseup" && startClick > 0){
@@ -35,7 +34,6 @@ export default function Home() {
               const d = new Date();
               let s = (d.getSeconds()); 
               setTime(s);
-  
           }
           else{
             const d = new Date();
@@ -50,6 +48,41 @@ export default function Home() {
       
     }
     // The end of Function 
+
+
+    // Adding Effect
+    const container =  useRef(null);
+    const container2 =  useRef(null);
+
+    useEffect(() => {
+    
+        lottie.loadAnimation({
+            container: container.current,
+            renderer:'svg',
+            loop:true,
+            autoplay:true,
+            animationData: require('../Json/bottom.json')
+        },
+        {
+          container: container2.current,
+          renderer:'svg',
+          loop:true,
+          autoplay:true,
+          animationData: require('../Json/top.json')
+      },
+        )
+
+        lottie.loadAnimation(
+          {
+            container: container2.current,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: require("../Json/top.json"),
+          }
+        );
+      })
+      
   return (
       <>
       {/* <Head><link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -58,6 +91,12 @@ export default function Home() {
 
 
         {/* <div className={` ${styles.mishra} `}>sdjfl;kasdjflkjds</div> */}
+
+        <div className={styles.topJson}  ref={container2} >
+
+            </div>
+
+
         <div className={styles.content}>
           <div className={styles.brand}>
             <div className={styles.logo}></div>
@@ -75,7 +114,12 @@ export default function Home() {
           Your browser does not support the audio element.
         </audio>
         </div>
+        <div className={styles.bottomJson}  ref={container} >
+
+            </div>
+        
         </div>
+        
 
       </>
   )

@@ -133,3 +133,16 @@ width: 500px;
         top: -42px;
         left: 70vw;
   }
+  .bottomJson{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 42vh;
+  }
+
+  .topJson{
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 42vh;
+  }
