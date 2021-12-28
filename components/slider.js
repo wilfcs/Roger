@@ -47,15 +47,16 @@ const ThisSlider = () => {
   return (
     <div className=' flex  z-30  ' >
       
-        {DummyDevelopers.map((developer) => {
+        {DummyDevelopers.map((developer, index) => {
           return (
-            <div className="  mb-12  mx-3 " >
+            <div className="  mb-12  mx-3 "key={index} >
               <DeveloperLandingCard
                 id={developer.id}
                 img={developer.img}
                 name={developer.name}
                 qual={developer.qual}
                 tech={developer.tech}
+                
               />
             </div>
           );

@@ -25,7 +25,7 @@ const Developers = () => {
   return (
     <div className="aa">
       <div className="developerBox w-screen h-screen pt-12 -z-20 ">
-        <Link href="/">
+        <Link href="/" passHref>
           <div className="brand cursor-pointer">
             <Logo/>
           </div>
