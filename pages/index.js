@@ -179,8 +179,15 @@ export default function Home() {
 
   const check = ()=>{
     var msg = new SpeechSynthesisUtterance();
-  msg.text = "Hello World";
-  window.speechSynthesis.speak(msg);
+  msg.text = "Hello, I am Roger. Tap the button in the center to register a dot, hold the button for 1 second to register a dash. click the button on the bottom right to go to tutorials page. Thankyou hahahaha.";
+  
+  var voices = window.speechSynthesis.getVoices();
+msg.voice = voices[0]; 
+msg.volume = 1; // From 0 to 1
+msg.rate = 1; // From 0.1 to 10
+msg.pitch = 2; // From 0 to 2
+
+window.speechSynthesis.speak(msg);
   }
   return (
     <>
