@@ -5,7 +5,7 @@ import Logo from '../components/MyLogo';
 import HomeArrow from '../components/HomeArrow';
 function Header() {
     return (
-        <div  className='bodyBox'>
+        <div  className='bodyBox shiftBox'>
             <div className="brand">
           <Logo/>
          

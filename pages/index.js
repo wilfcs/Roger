@@ -197,7 +197,7 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-    check();
+    // check();
       
     }, 2000);
     setFirstPlay(0);
@@ -212,7 +212,7 @@ export default function Home() {
       {/* <div className={` ${styles.mishra} `}>sdjfl;kasdjflkjds</div> */}
 
       <span className="topJson " ref={container2}></span>
-      <div className="content">
+      <div className="content shiftBox">
         <div className="brand">
           <Logo />
           <input
@@ -239,7 +239,7 @@ export default function Home() {
           </audio>
         </div>
       </div>
-      <span className="bottomJson" ref={container}></span>
+      <span className="bottomJson  " ref={container}></span>
 
       <HomeArrow page="/learn" />
 

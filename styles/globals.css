@@ -62,13 +62,32 @@
   animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
+.shiftBox{
+  animation: example 0.5s ease-in ;
+}
+
 @keyframes example {
   from {
-    margin-left: 100vw;
+    opacity: 0;
+
   }
 
   to {
-    margin-left: 0;
+    opacity: 1;
+
+  }
+}
+.myRef{
+  animation: ref 2s ease-in ;
+
+}
+@keyframes ref {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
