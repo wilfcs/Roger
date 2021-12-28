@@ -1,25 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* Starting of  Card Slider CSS */
-*{
+* {
   margin: 0;
   padding: 0;
 }
-.slick-arrow.slick-prev::before ,
+
+.slick-arrow.slick-prev::before,
 .slick-arrow.slick-next::before {
   display: none;
 }
-.slick-slider{
-  background-color: #c4c4cd!important;
+
+.slick-slider {
+  background-color: #c4c4cd !important;
 }
- .mydot{
-   display: flex !important;
-   align-items: center !important;
-   justify-content: center !important;
- }
+
+.mydot {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .mydot li {
-  width:  40px !important ;
+  width: 40px !important;
   height: 40px !important;
   margin: 0px 10px !important;
   border-radius: 43px;
@@ -35,9 +40,10 @@
   /* padding: 10px; */
   box-shadow: -20px -20px 50px #f3f3f3, 20px 20px 50px #d2d2d2;
 }
+
 /*The end of  Card Slider CSS */
 
-.bodyBox{
+.bodyBox {
   background-color: #c4c4cd;
   display: flex;
   justify-content: center;
@@ -45,9 +51,28 @@
   width: 100vw;
   height: 100vh;
 }
-.imageBox{
+
+.imageBox {
   box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
-              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
-              border-radius: 50px;
-              cursor: pointer;
+    -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  cursor: pointer;
+}
+.example{
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+@keyframes example {
+  from {
+    margin-left: 100vw;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+
+body{
+  background-color: #c4c4cd;
+
 }

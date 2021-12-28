@@ -24,7 +24,7 @@ const DeveloperLandingCard = (props) => {
 
 
   return (
-    <div className="cardBody z-50 ">
+    <div className="cardBody ">
       <div className="flex flex-row justify-center">
            <div className="divImg">
             <img className="img rounded-full" src={`${props.img}`} alt="logo" width={150} height={150} />

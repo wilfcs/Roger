@@ -20,8 +20,8 @@ const developers = () => {
   });
 
   return (
-    <>
-      <div className="developerBox w-screen h-screen pt-12 ">
+    <div className="aa">
+      <div className="developerBox w-screen h-screen pt-12 -z-20 ">
         <Link href="/">
           <div className="brand cursor-pointer">
             <Logo/>
@@ -30,21 +30,27 @@ const developers = () => {
         <h1 className=" text-center  from-neutral-600 font-bold text-5xl pb-8">
           Developers
         </h1>
-        <div className="check ">
+        <div className=" z-30 ">
           <ThisSlider />
-          <div className="fixed bottom-0 -z-10  " ref={container}></div>
+         
         </div>
+      <div className="fixed bottom-0 -z-10  " ref={container}></div>
+        
       </div>
 
 
       <HomeArrow page="/"/>
 
 
+
       <style jsx>
         {`
           .developerBox {
-            background-color: #c4c4cd;
+
             padding: auto;
+          }
+          .aa{
+
           }
           .brand {
             position: fixed;
@@ -68,7 +74,7 @@ const developers = () => {
           }
         `}
       </style>
-    </>
+    </div>
   );
 };
 

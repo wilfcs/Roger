@@ -45,23 +45,8 @@ const ThisSlider = () => {
       },
     ];
   return (
-    <div className='bg-red-200' >
-      <Slider
-        {...settings}
-        customPaging={(i) => {
-          return (
-            <div  >
-              <Image
-                src={eval(`image${i+1}`)}
-                width="100%"
-                height="100%"
-                objectFit="cover"
-              />
-            </div>
-          );
-        }}
-        dotsClass="slick-dots mydot"
-      >
+    <div className=' flex  z-30  ' >
+      
         {DummyDevelopers.map((developer) => {
           return (
             <div className="  mb-12  mx-3 " >
@@ -74,8 +59,7 @@ const ThisSlider = () => {
               />
             </div>
           );
-        })}
-      </Slider>  
+        })} 
 
     </div>
   )
