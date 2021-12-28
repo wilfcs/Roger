@@ -49,6 +49,7 @@ const Logo = () => {
                     font-size: 30px;
                     color: #81818b;
                   }
+                
                   `
               }
           </style>
