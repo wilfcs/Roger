@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 import lottie from "lottie-web";
+import Logo from "../components/MyLogo";
+import HomeArrow from "../components/HomeArrow";
 
 export default function Home() {
   function play() {
@@ -36,7 +38,6 @@ export default function Home() {
           let s = d.getSeconds();
           setTime(s);
           res(val);
-
         } else {
           setVal(`${val}-`);
           const d = new Date();
@@ -50,14 +51,12 @@ export default function Home() {
           let s = d.getSeconds();
           setTime(s);
           res(val);
-
         } else if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} .`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
           res(val);
-
         } else {
           setVal(`${val}.`);
           const d = new Date();
@@ -71,72 +70,67 @@ export default function Home() {
 
   // Resultant Function
 
-
-  
-
-
-
   function decodeMorse(morseCode) {
-    var ref = { 
-      '.-':     'a',
-      '-...':   'b',
-      '-.-.':   'c',
-      '-..':    'd',
-      '.':      'e',
-      '..-.':   'f',
-      '--.':    'g',
-      '....':   'h',
-      '..':     'i',
-      '.---':   'j',
-      '-.-':    'k',
-      '.-..':   'l',
-      '--':     'm',
-      '-.':     'n',
-      '---':    'o',
-      '.--.':   'p',
-      '--.-':   'q',
-      '.-.':    'r',
-      '...':    's',
-      '-':      't',
-      '..-':    'u',
-      '...-':   'v',
-      '.--':    'w',
-      '-..-':   'x',
-      '-.--':   'y',
-      '--..':   'z',
-      '.----':  '1',
-      '..---':  '2',
-      '...--':  '3',
-      '....-':  '4',
-      '.....':  '5',
-      '-....':  '6',
-      '--...':  '7',
-      '---..':  '8',
-      '----.':  '9',
-      '-----':  '0',
+    var ref = {
+      ".-": "a",
+      "-...": "b",
+      "-.-.": "c",
+      "-..": "d",
+      ".": "e",
+      "..-.": "f",
+      "--.": "g",
+      "....": "h",
+      "..": "i",
+      ".---": "j",
+      "-.-": "k",
+      ".-..": "l",
+      "--": "m",
+      "-.": "n",
+      "---": "o",
+      ".--.": "p",
+      "--.-": "q",
+      ".-.": "r",
+      "...": "s",
+      "-": "t",
+      "..-": "u",
+      "...-": "v",
+      ".--": "w",
+      "-..-": "x",
+      "-.--": "y",
+      "--..": "z",
+      ".----": "1",
+      "..---": "2",
+      "...--": "3",
+      "....-": "4",
+      ".....": "5",
+      "-....": "6",
+      "--...": "7",
+      "---..": "8",
+      "----.": "9",
+      "-----": "0",
     };
-  
-    return morseCode
-      .split('   ')
-      .map(
-        a => a
-          .split(' ')
-          .map(
-            b => ref[b]
-          ).join('')
-      ).join(' ');
-  }
-  
-  
 
-  const res = ()=>{
-    setResultant(decodeMorse(val)) ;
+    return morseCode
+      .split("   ")
+      .map((a) =>
+        a
+          .split(" ")
+          .map((b) => ref[b])
+          .join("")
+      )
+      .join(" ");
   }
+
+  const res = () => {
+    setResultant(decodeMorse(val));
+  };
 
   // Adding Effect
   const [firstLoad, setFirstLoad] = useState(1);
   const container = useRef(null);
   const container2 = useRef(null);
+  const container3 = useRef(null);
+
 
   useEffect(() => {
     setFirstLoad(0);
@@ -155,6 +149,13 @@ export default function Home() {
         loop: true,
         autoplay: true,
         animationData: require("../Json/top.json"),
+      },
+      {
+        container: container3.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: require("../Json/page.json"),
       }
     );
 
@@ -165,6 +166,13 @@ export default function Home() {
       autoplay: true,
       animationData: require("../Json/top.json"),
     });
+    lottie.loadAnimation({
+      container: container3.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("../Json/page.json"),
+    });
   }, [firstLoad]);
 
   return (
@@ -174,12 +182,10 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet"/> </Head> */}
 
       {/* <div className={` ${styles.mishra} `}>sdjfl;kasdjflkjds</div> */}
-      <span className="topJson" ref={container2}></span>
+      <span className="topJson " ref={container2}></span>
       <div className="content">
         <div className="brand">
-          <div className="logo"></div>
-          <div className="brandName">Roger</div>
-
+          <Logo/>
           <input
             type="text"
             className="showMorse"
@@ -205,6 +211,9 @@ export default function Home() {
         </div>
       </div>
       <span className="bottomJson" ref={container}></span>
+      
+        <HomeArrow page="/learn"/>
+            
 
       <style jsx>
         {`
@@ -335,8 +344,14 @@ export default function Home() {
             height: 300px;
             overflow: hidden;
           }
+          .pageJson{
+            width: 5rem;
+            height: 50px;
+            overflow: hidden;
+          }
         `}
       </style>
+      <p className="pageJson fixed bottom-10 right-10  w-28 h-32       " ></p>
     </>
   );
 }

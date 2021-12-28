@@ -21,37 +21,31 @@ const ThisSlider = () => {
     };
   
     const DummyDevelopers = [
-      {
-        id: "m1",
-        img:"https://i.imgur.com/k7o3oFU.png",
-        name: "Ashish Kumar Mishra",
-        qual: "Software Sophomore",
-        tech: "Full Stack Developer / Designer",
-      },
+      
       {
         id: "m2",
         img:"https://i.imgur.com/QrxYwym.png",
-        name: "Ankit Raj",
+        name: "Himanshu Mishra",
         qual: "Software Sophomore",
-        tech: "Full Stack Developer",
+        tech: "Front-End / Designer",
       },
       {
         id: "m3",
         img:"https://imgur.com/8uJJZp6.png",
-        name: "Shubham Singh",
+        name: "Samridhi Kapoor",
         qual: "Software Sophomore",
-        tech: "Full Stack Developer",
+        tech: "Machine Learning",
       },
       {
         id: "m5",
         img:"https://i.imgur.com/1zKU2KD.jpeg",
         name: "Om Prakash",
         qual: "Software Sophomore",
-        tech: "Full Stack Developer / Designer",
+        tech: "Full Stack Developer",
       },
     ];
   return (
-    <div>
+    <div className='bg-red-200' >
       <Slider
         {...settings}
         customPaging={(i) => {

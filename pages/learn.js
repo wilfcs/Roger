@@ -1,19 +1,21 @@
 import React from 'react'
 // import morse from '../public/images/wp5048666.png'
 import Image from 'next/image';
+import Logo from '../components/MyLogo';
+import HomeArrow from '../components/HomeArrow';
 function Header() {
     return (
         <div  className='bodyBox'>
             <div className="brand">
-          <div className="logo"></div>
-          <div className="brandName">Roger</div>
-
+          <Logo/>
          
         </div>
 
         <div className='imageBox' >
              <Image src="/images/wp5048666.png" width={500} height={600} alt="Morse Code" />
         </div>
+        <HomeArrow page="/developers"/>
+
 
 
         <style jsx>
