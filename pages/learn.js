@@ -41,6 +41,13 @@ function Header() {
                     font-size: 30px;
                     color: #81818b;
                   }
+                  .bodyBox{
+                    width: 97vw;
+                    height: 97vh;
+                  }
+                  .imageBox{
+                      width: 401px;
+                  }
                 `
             }
         </style>
