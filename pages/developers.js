@@ -6,7 +6,7 @@ import Link from "next/link";
 import Logo from "../components/MyLogo";
 import HomeArrow from "../components/HomeArrow";
 
-const developers = () => {
+const Developers = () => {
   const [firstLoad, setFirstLoad] = useState(1);
 
   const container = useRef(null);
@@ -81,4 +81,4 @@ const developers = () => {
   );
 };
 
-export default developers;
+export default Developers;

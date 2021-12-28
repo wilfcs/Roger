@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useRef, useState } from "react";
 import lottie from "lottie-web";
 
-const topLearn = () => {
+const TopLearn = () => {
   const [firstLoad, setFirstLoad] = useState(1);
 
   const container = useRef(null);
@@ -30,4 +30,4 @@ const topLearn = () => {
     )
 }
 
-export default topLearn
+export default TopLearn

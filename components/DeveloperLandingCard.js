@@ -1,6 +1,7 @@
 import Image from "next/image";
 import lottie from "lottie-web";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 
 const DeveloperLandingCard = (props) => {
@@ -37,12 +38,12 @@ const DeveloperLandingCard = (props) => {
         <div className="text-lg mt-4 font-normal">{props.qual}</div>
         <div className="text-lg mt-4 font-bold text-blue-600">{props.tech}</div>
       </div>
-      <a href="/developers" className="button">
+      {/* <Link href="/developers" className="button"> */}
         <span className="pl-16 font-bold text-blue-600">Check Profile</span>
         <span className="arrow p-1" ref={container}  >
             
         </span>
-      </a>
+      {/* </Link> */}
       <style jsx>{`
         .cardBody{
           height: 450px;
