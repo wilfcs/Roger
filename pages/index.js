@@ -226,17 +226,11 @@ export default function Home() {
           <input type="text" className="showText" value={resultant} />
         </div>
 
-        <div className="body">
-          <div
-            className="bigButton"
-            id="bigButton"
+        <div className="bigButton"
+            id="bigButton" 
             onMouseDown={click}
-            onMouseUp={click}
-          ></div>
-          <audio id="a1">
-            <source src="/sound/bottonpress.wav" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+            onMouseUp={click}>
+          
         </div>
       </div>
       <span className="bottomJson  " ref={container}></span>
@@ -270,9 +264,6 @@ export default function Home() {
             box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
               -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
             font-size: 5rem;
-            width: 200px;
-            height: 200px;
-            border-radius: 40px;
             overflow: hidden;
             padding: 1.3rem;
             display: flex;
