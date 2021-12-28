@@ -23,7 +23,7 @@ const Developers = () => {
   },[firstLoad]);
 
   return (
-    <div className="aa">
+    <div className="aa w-screen h-screen overflow-hidden">
       <div className="developerBox w-screen h-screen pt-12 -z-20 ">
         <Link href="/" passHref>
           <div className="brand cursor-pointer">

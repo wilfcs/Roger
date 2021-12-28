@@ -46,8 +46,8 @@ const DeveloperLandingCard = (props) => {
       {/* </Link> */}
       <style jsx>{`
         .cardBody{
-          height: 450px;
-          width: 350px;
+          height: 424px;
+          width: 300px;
           background-color: #c4c4cd;
           box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
               -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
