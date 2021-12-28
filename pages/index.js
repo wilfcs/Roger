@@ -1,6 +1,4 @@
-import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
-import styles from "../styles/Home.module.css";
 import lottie from "lottie-web";
 import Logo from "../components/MyLogo";
 import HomeArrow from "../components/HomeArrow";
@@ -208,10 +206,11 @@ window.speechSynthesis.speak(msg);
           <input type="text" className="showText" value={resultant} />
         </div>
 
-        <div className="bigButton"
+        <div className="bigButton flex justify-center items-center "
             id="bigButton" 
             onMouseDown={click}
             onMouseUp={click}>
+       
           
         </div>
       </div>
