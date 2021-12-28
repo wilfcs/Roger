@@ -80,14 +80,13 @@ const Developers = () => {
           .title {
                   font-family: "Work Sans", sans-serif;
                     position: absolute;
-                    top: 7px;
-                    left: 71px;
+                    top: 35px;
                     color: #c4c4cd ;
-                  font-size: 6rem;
+                  font-size: 3rem;
                   font-weight: bold;
                   font-family: sans-serif;
                   text-transform: uppercase;
-                  text-shadow: -6px 6px 15px rgba(0,0,0,0.5),6px -6px 15px rgba(255,255,255,0.8);
+                  text-shadow: -6px 6px 15px rgba(0, 0, 0, 0.5), 6px -6px 15px rgba(160, 147, 147, 0.8);
                               
                   position: relative;
                 

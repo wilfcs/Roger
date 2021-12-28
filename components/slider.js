@@ -6,7 +6,7 @@ import DeveloperLandingCard from './DeveloperLandingCard'
 import Image from 'next/image';
 
 const ThisSlider = () => {
-  const image1 =  `https://i.imgur.com/k7o3oFU.png` 
+  const image1 =  `./public/images/himanshu_image.jpeg` 
   const image2 =  `https://i.imgur.com/QrxYwym.png` 
   const image3 =  `https://imgur.com/8uJJZp6.png` 
   const image4 =  `https://i.imgur.com/1zKU2KD.jpeg` 
@@ -24,7 +24,7 @@ const ThisSlider = () => {
       
       {
         id: "m2",
-        img:"https://i.imgur.com/QrxYwym.png",
+        img:"./images/himanshu_image.jpeg",
         name: "Himanshu Mishra",
         qual: "Software Sophomore",
         tech: "Front-End / Designer",

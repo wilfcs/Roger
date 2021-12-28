@@ -28,7 +28,7 @@ const DeveloperLandingCard = (props) => {
     <div className="cardBody ">
       <div className="flex flex-row justify-center">
            <div className="divImg">
-            <img className="img rounded-full" src={`${props.img}`} alt="logo" width={150} height={150} />
+            <img className="img rounded-full" src={`${props.img}`} alt="logo" width={120} height={120} />
           </div>
       </div>
       <div>
@@ -46,14 +46,21 @@ const DeveloperLandingCard = (props) => {
       {/* </Link> */}
       <style jsx>{`
         .cardBody{
-          height: 424px;
-          width: 300px;
-          background-color: #c4c4cd;
-          box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
-              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
-          border-radius: 30px;
-          margin: 40px ;
+                height: 360px;
+        width: 267px;
+        background-color: #c4c4cd;
+        box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2), -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+        border-radius: 30px;
+        margin-top: 44px;
+        margin-right: 14px;
+        margin-bottom: 40px;
+        margin-left: 92px;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
           flex-direction: column;
           padding: 20px 40px;
         }
@@ -62,8 +69,8 @@ const DeveloperLandingCard = (props) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 180px;
-          height: 180px;
+          width: 140px;
+          height: 140px;
           background-color: #c4c4cd;
 
           box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
@@ -96,6 +103,10 @@ const DeveloperLandingCard = (props) => {
           box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
               inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
           border-radius: 50%;
+        }
+        .title{
+          top: 35px;
+          font-size: 3rem;
         }
     `}</style>
     </div>
