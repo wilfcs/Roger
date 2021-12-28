@@ -28,13 +28,16 @@ const ThisSlider = () => {
         name: "Himanshu Mishra",
         qual: "Software Sophomore",
         tech: "Front-End / Designer",
+        githubUrl:"https://github.com/himanshu070"
       },
       {
         id: "m3",
-        img:"https://imgur.com/8uJJZp6.png",
+        img:"/images/sidhu.jpg",
         name: "Samridhi Kapoor",
         qual: "Software Sophomore",
         tech: "Machine Learning",
+        githubUrl:"https://github.com/OmPr366"
+        
       },
       {
         id: "m5",
@@ -42,6 +45,8 @@ const ThisSlider = () => {
         name: "Om Prakash",
         qual: "Software Sophomore",
         tech: "Full Stack Developer",
+        githubUrl:"https://github.com/samridhikapoor"
+
       },
     ];
   return (
@@ -56,6 +61,7 @@ const ThisSlider = () => {
                 name={developer.name}
                 qual={developer.qual}
                 tech={developer.tech}
+                githubUrl={developer.githubUrl}
                 
               />
             </div>

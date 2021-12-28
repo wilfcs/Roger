@@ -41,7 +41,7 @@ const Logo = () => {
           .brandName {
             font-family: "Work Sans", sans-serif;
             position: absolute;
-            top: 7px;
+            top: 5px;
             left: 71px;
             font-size: 30px;
             color: #81818b;
