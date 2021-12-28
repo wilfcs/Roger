@@ -23,21 +23,22 @@ const Developers = () => {
   },[firstLoad]);
 
   return (
-    <div className=" w-screen h-screen overflow-hidden">
+    
+    <div className="shiftBox w-screen h-screen overflow-hidden">
       <div className="developerBox w-screen h-screen  -z-20 ">
         <Link href="/" passHref>
           <div className="brand cursor-pointer">
             <Logo/>
           </div>
         </Link>
-        <h1 className=" text-center  from-neutral-600 font-bold text-5xl pb-8 title">
+        <h1 className=" text-center   font-bold text-5xl pb-8 title">
           Developers
         </h1>
         <div className=" z-30 ">
           <ThisSlider />
          
         </div>
-      <div className="fixed bottom-0 -z-10 "  ref={container}></div>
+      <div className="fixed -bottom-12 -z-10 myRef "  ref={container}></div>
         
       </div>
 

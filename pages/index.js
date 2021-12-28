@@ -51,7 +51,7 @@ export default function Home() {
         //   let s = d.getSeconds();
         //   setTime(s);
         //   res(val);
-        // }  
+        // }
         if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} .`);
           const d = new Date();
@@ -132,7 +132,6 @@ export default function Home() {
   const container2 = useRef(null);
   const container3 = useRef(null);
 
-
   useEffect(() => {
     setFirstLoad(0);
 
@@ -176,8 +175,8 @@ export default function Home() {
     });
   }, [firstLoad]);
 
-
-  const check = ()=>{
+  const check = () => {
+    console.log("helllo g Hello");
     var msg = new SpeechSynthesisUtterance();
   msg.text = "Hello, I am Roger. Tap the button in the center to register a dot, hold the button for 1 second to register a dash. click the button on the bottom right to go to tutorials page. Thankyou hahahaha.";
   
@@ -197,11 +196,10 @@ window.speechSynthesis.speak(msg);
 
       {/* <div className={` ${styles.mishra} `}>sdjfl;kasdjflkjds</div> */}
 
-      <button onClick={check}>CLick me pleasseee</button>
       <span className="topJson " ref={container2}></span>
-      <div className="content">
+      <div className="content shiftBox">
         <div className="brand">
-          <Logo/>
+          <Logo />
           <input
             type="text"
             className="showMorse"
@@ -226,10 +224,9 @@ window.speechSynthesis.speak(msg);
           </audio>
         </div>
       </div>
-      <span className="bottomJson" ref={container}></span>
-      
-        <HomeArrow page="/learn"/>
-            
+      <span className="bottomJson  " ref={container}></span>
+
+      <HomeArrow page="/learn" />
 
       <style jsx>
         {`
@@ -360,14 +357,14 @@ window.speechSynthesis.speak(msg);
             height: 300px;
             overflow: hidden;
           }
-          .pageJson{
+          .pageJson {
             width: 5rem;
             height: 50px;
             overflow: hidden;
           }
         `}
       </style>
-      <p className="pageJson fixed bottom-10 right-10  w-28 h-32       " ></p>
+      <p className="pageJson fixed bottom-10 right-10  w-28 h-32       "></p>
     </>
   );
 }
