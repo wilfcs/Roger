@@ -122,8 +122,13 @@ export default function Home() {
   const container2 = useRef(null);
   const container3 = useRef(null);
 
+ 
+
   useEffect(() => {
     setFirstLoad(0);
+
+    var x = document.getElementById("myAudio");
+    x.play();
 
     lottie.loadAnimation(
       {
@@ -348,6 +353,12 @@ window.speechSynthesis.speak(msg);
         `}
       </style>
       <p className="pageJson fixed bottom-10 right-10  w-28 h-32       "></p>
+
+       {/*  Audio Set */} 
+       <audio id="myAudio">
+        <source src="/sound/IndexAudio.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </>
   );
 }
