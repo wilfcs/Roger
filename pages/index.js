@@ -45,13 +45,14 @@ export default function Home() {
           setTime(s);
         }
       } else {
-        if (parseInt(s) - parseInt(time) >= 2.5) {
-          setVal(`${val} /.`);
-          const d = new Date();
-          let s = d.getSeconds();
-          setTime(s);
-          res(val);
-        } else if (parseInt(s) - parseInt(time) >= 1.5) {
+        // if (parseInt(s) - parseInt(time) >= 2.5) {
+        //   setVal(`${val} /.`);
+        //   const d = new Date();
+        //   let s = d.getSeconds();
+        //   setTime(s);
+        //   res(val);
+        // }  
+        if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} .`);
           const d = new Date();
           let s = d.getSeconds();
@@ -175,6 +176,12 @@ export default function Home() {
     });
   }, [firstLoad]);
 
+
+  const check = ()=>{
+    var msg = new SpeechSynthesisUtterance();
+  msg.text = "Hello World";
+  window.speechSynthesis.speak(msg);
+  }
   return (
     <>
       {/* <Head><link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -182,6 +189,8 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet"/> </Head> */}
 
       {/* <div className={` ${styles.mishra} `}>sdjfl;kasdjflkjds</div> */}
+
+      <button onClick={check}>CLick me pleasseee</button>
       <span className="topJson " ref={container2}></span>
       <div className="content">
         <div className="brand">
