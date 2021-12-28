@@ -39,10 +39,14 @@ const DeveloperLandingCard = (props) => {
         <div className="text-lg mt-4 font-bold text-blue-600">{props.tech}</div>
       </div>
       {/* <Link href="/developers" className="button"> */}
+      <Link href={props.githubUrl?props.githubUrl:""} >
+      <a target="_blank" className="button">
         <span className="pl-16 font-bold text-blue-600">Check Profile</span>
-        <span className="arrow p-1" ref={container}  >
-            
+        <span className="arrow">
+            <Image src="/Images/Arrow.png" alt="logo" width={15} height={15} />
         </span>
+      </a>
+      </Link>
       {/* </Link> */}
       <style jsx>{`
         .cardBody{
