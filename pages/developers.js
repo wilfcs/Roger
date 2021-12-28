@@ -1,13 +1,27 @@
-import React from 'react'
-import ThisSlider from '../components/slider'
+import React from "react";
+import ThisSlider from "../components/slider";
 
 const developers = () => {
-    return (
-        <div>
-            fdgggfd
-            {/* <ThisSlider/> */}
+  return (
+    <>
+      <div className="developerBox">
+          <div className="check" >
+        <ThisSlider />
         </div>
-    )
-}
+      </div>
 
-export default developers
+      <style jsx>
+        {`
+          .developerBox {
+            background-color: #c4c4cd;
+            padding: auto;
+            width: 100vw;
+            height: 100vh;
+          }
+        `}
+      </style>
+    </>
+  );
+};
+
+export default developers;
