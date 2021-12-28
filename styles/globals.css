@@ -1,16 +1,45 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/* Starting of  Card Slider CSS */
+.slick-arrow.slick-prev::before ,
+.slick-arrow.slick-next::before {
+  display: none;
+}
+.slick-slider{
+  background-color: #ffffff!important;
+}
+ .mydot{
+   display: flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+ }
+.mydot li {
+  width:  40px !important ;
+  height: 40px !important;
+  margin: 0px 10px !important;
+  border-radius: 43px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  background-color: #F3F3F3;
+  box-shadow: -20px -20px 50px #F3F3F3, 20px 20px 50px #d2d2d2;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.mydot li.slick-active {
+  width: 100px !important;
+  height: 100px !important;
+  /* padding: 10px; */
+  box-shadow: -20px -20px 50px #f3f3f3, 20px 20px 50px #d2d2d2;
 }
+/*The end of  Card Slider CSS */
 
-* {
-  box-sizing: border-box;
+.bodyBox{
+  background-color: #c4c4cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.imageBox{
+  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+              -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+              border-radius: 50px;
 }

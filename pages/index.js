@@ -11,6 +11,7 @@ export default function Home() {
 
   // Fucntion for updating Input Values
   const [resultant, setResultant] = useState("");
+  const [str, setStr] = useState("");
   const [val, setVal] = useState("");
   const [time, setTime] = useState("60");
 
@@ -29,16 +30,19 @@ export default function Home() {
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+
         } else if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} -`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+
         } else {
           setVal(`${val}-`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+
         }
       } else {
         if (parseInt(s) - parseInt(time) >= 2.5) {
@@ -51,23 +55,34 @@ export default function Home() {
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+
         } else {
           setVal(`${val}.`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+
         }
       }
     }
-    resultHandler();
   };
   // The end of Function
 
   // Resultant Function
+
+  const strSet  =  ()=>{
+    for (let i = 0; i < val.length; i++) {
+
+    }
+  }
+
   const resultHandler = () => {
-    var str = "";
-    let count = 0;
-    setResultant("");
+    let str = "";
+    // setResultant("");
+    
+
+    // str += 
+    // 
 
     for (let i = 0; i < val.length; i++) {
       if (val[i] != " ") {
@@ -76,12 +91,15 @@ export default function Home() {
         } else if (val[i] == "-") {
           str += "1";
         }
-      } else {
+      } else { 
         if (str == " ") {
-          setResultant(`${resultant}${str}`);
+          setResultant(`${resultant}${str}`);   
         }
-        if(str == "01"){
-          setResultant(`${resultant}a`);
+        else if (str == "/") {
+          setResultant(`${resultant} `);   
+        }
+        else if(str == "01"){
+          setResultant(`${resultant}a`); 
         }
         else if(str == "1000"){
           setResultant(`${resultant}b`);
@@ -160,6 +178,7 @@ export default function Home() {
         }
         str = "";
       }
+      console.log(resultant);
     }
 
   };
@@ -217,10 +236,10 @@ export default function Home() {
             value={val}
             onChange={(e) => {
               setVal(e.target.val);
-              resultHandler();
             }}
           />
           <input type="text" className="showText" value={resultant} />
+          <button onClick={resultHandler} >Click</button>
         </div>
 
         <div className="body">
