@@ -7,9 +7,12 @@ import Logo from "../components/MyLogo";
 import HomeArrow from "../components/HomeArrow";
 
 const developers = () => {
+  const [firstLoad, setFirstLoad] = useState(1);
+
   const container = useRef(null);
 
   useEffect(() => {
+    setFirstLoad(0);
     lottie.loadAnimation({
       container: container.current,
       renderer: "svg",
@@ -17,7 +20,7 @@ const developers = () => {
       autoplay: true,
       animationData: require("../Json/dev.json"),
     });
-  });
+  },[firstLoad]);
 
   return (
     <div className="aa">
@@ -34,7 +37,7 @@ const developers = () => {
           <ThisSlider />
          
         </div>
-      <div className="fixed bottom-0 -z-10  " ref={container}></div>
+      <div className="fixed bottom-0 -z-10 "  ref={container}></div>
         
       </div>
 
