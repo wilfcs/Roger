@@ -78,11 +78,7 @@ export default function Home() {
 
   const resultHandler = () => {
     let str = "";
-    // setResultant("");
-    
-
-    // str += 
-    // 
+  
 
     for (let i = 0; i < val.length; i++) {
       if (val[i] != " ") {

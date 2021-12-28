@@ -5,7 +5,7 @@ const developers = () => {
     return (
         <div>
             fdgggfd
-            <ThisSlider/>
+            {/* <ThisSlider/> */}
         </div>
     )
 }
