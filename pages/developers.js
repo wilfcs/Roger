@@ -30,7 +30,7 @@ const Developers = () => {
             <Logo/>
           </div>
         </Link>
-        <h1 className=" text-center  from-neutral-600 font-bold text-5xl pb-8">
+        <h1 className=" text-center  from-neutral-600 font-bold text-5xl pb-8 title">
           Developers
         </h1>
         <div className=" z-30 ">
@@ -75,6 +75,23 @@ const Developers = () => {
             font-size: 30px;
             color: #81818b;
           }
+
+          .title {
+                  font-family: "Work Sans", sans-serif;
+                    position: absolute;
+                    top: 7px;
+                    left: 71px;
+                    color: #c4c4cd ;
+                  font-size: 6rem;
+                  font-weight: bold;
+                  font-family: sans-serif;
+                  text-transform: uppercase;
+                  text-shadow: -6px 6px 15px rgba(0,0,0,0.5),6px -6px 15px rgba(255,255,255,0.8);
+                              
+                  position: relative;
+                
+                 
+                  }
         `}
       </style>
     </div>
