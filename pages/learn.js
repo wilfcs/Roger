@@ -19,7 +19,7 @@ function Header() {
     return (
         <>
         <button onClick={check}>CHECK ME PLS</button>
-        <div  className='bodyBox'>
+        <div  className='bodyBox shiftBox'>
             <div className="brand">
           <Logo/>
          
