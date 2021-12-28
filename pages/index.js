@@ -11,7 +11,6 @@ export default function Home() {
 
   // Fucntion for updating Input Values
   const [resultant, setResultant] = useState("");
-  const [str, setStr] = useState("");
   const [val, setVal] = useState("");
   const [time, setTime] = useState("60");
 
@@ -30,19 +29,19 @@ export default function Home() {
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
-
+          res(val);
         } else if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} -`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+          res(val);
 
         } else {
           setVal(`${val}-`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
-
         }
       } else {
         if (parseInt(s) - parseInt(time) >= 2.5) {
@@ -50,18 +49,20 @@ export default function Home() {
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+          res(val);
+
         } else if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} .`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
+          res(val);
 
         } else {
           setVal(`${val}.`);
           const d = new Date();
           let s = d.getSeconds();
           setTime(s);
-
         }
       }
     }
@@ -70,114 +71,67 @@ export default function Home() {
 
   // Resultant Function
 
-  const strSet  =  ()=>{
-    for (let i = 0; i < val.length; i++) {
 
-    }
-  }
-
-  const resultHandler = () => {
-    let str = "";
   
 
-    for (let i = 0; i < val.length; i++) {
-      if (val[i] != " ") {
-        if (val[i] == ".") {
-          str += "0";
-        } else if (val[i] == "-") {
-          str += "1";
-        }
-      } else { 
-        if (str == " ") {
-          setResultant(`${resultant}${str}`);   
-        }
-        else if (str == "/") {
-          setResultant(`${resultant} `);   
-        }
-        else if(str == "01"){
-          setResultant(`${resultant}a`); 
-        }
-        else if(str == "1000"){
-          setResultant(`${resultant}b`);
-        }
-        else if(str == "1010"){
-          setResultant(`${resultant}c`);
-        }else if(str == "100"){
-          setResultant(`${resultant}d`);
-        }else if(str == "0"){
-          setResultant(`${resultant}e`);
-        }else if(str == "0010"){
-          setResultant(`${resultant}f`);
-        }else if(str == "110"){
-          setResultant(`${resultant}g`);
-        }else if(str == "0000"){
-          setResultant(`${resultant}h`);
-        }else if(str == "00"){
-          setResultant(`${resultant}i`);
-        }else if(str == "0111"){
-          setResultant(`${resultant}j`);
-        }else if(str == "101"){
-          setResultant(`${resultant}k`);
-        }else if(str == "0100"){
-          setResultant(`${resultant}l`);
-        }else if(str == "11"){
-          setResultant(`${resultant}m`);
-        }
-        else if(str == "10"){
-          setResultant(`${resultant}n`);
-        }else if(str == "111"){
-          setResultant(`${resultant}o`);
-        }else if(str == "0110"){
-          setResultant(`${resultant}p`);
-        }else if(str == "1101"){
-          setResultant(`${resultant}q`);
-        }else if(str == "010"){
-          setResultant(`${resultant}r`);
-        }else if(str == "000"){
-          setResultant(`${resultant}s`);
-        }else if(str == "1"){
-          setResultant(`${resultant}t`);
-        }else if(str == "001"){
-          setResultant(`${resultant}u`);
-        }else if(str == "0001"){
-          setResultant(`${resultant}v`);
-        }else if(str == "011"){
-          setResultant(`${resultant}w`);
-        }else if(str == "1001"){
-          setResultant(`${resultant}x`);
-        }else if(str == "1011"){
-          setResultant(`${resultant}y`);
-        }else if(str == "1100"){
-          setResultant(`${resultant}z`);
-        }
 
-        else if(str == "0111"){
-          setResultant(`${resultant}1`);
-        }else if(str == "00111"){
-          setResultant(`${resultant}2`);
-        }else if(str == "00011"){
-          setResultant(`${resultant}3`);
-        }else if(str == "00001"){
-          setResultant(`${resultant}4`);
-        }else if(str == "00000"){
-          setResultant(`${resultant}5`);
-        }else if(str == "10000"){
-          setResultant(`${resultant}6`);
-        }else if(str == "11000"){
-          setResultant(`${resultant}7`);
-        }else if(str == "11100"){
-          setResultant(`${resultant}8`);
-        }else if(str == "11110"){
-          setResultant(`${resultant}9`);
-        }else if(str == "11111"){
-          setResultant(`${resultant}0`);
-        }
-        str = "";
-      }
-      console.log(resultant);
-    }
 
-  };
+  function decodeMorse(morseCode) {
+    var ref = { 
+      '.-':     'a',
+      '-...':   'b',
+      '-.-.':   'c',
+      '-..':    'd',
+      '.':      'e',
+      '..-.':   'f',
+      '--.':    'g',
+      '....':   'h',
+      '..':     'i',
+      '.---':   'j',
+      '-.-':    'k',
+      '.-..':   'l',
+      '--':     'm',
+      '-.':     'n',
+      '---':    'o',
+      '.--.':   'p',
+      '--.-':   'q',
+      '.-.':    'r',
+      '...':    's',
+      '-':      't',
+      '..-':    'u',
+      '...-':   'v',
+      '.--':    'w',
+      '-..-':   'x',
+      '-.--':   'y',
+      '--..':   'z',
+      '.----':  '1',
+      '..---':  '2',
+      '...--':  '3',
+      '....-':  '4',
+      '.....':  '5',
+      '-....':  '6',
+      '--...':  '7',
+      '---..':  '8',
+      '----.':  '9',
+      '-----':  '0',
+    };
+  
+    return morseCode
+      .split('   ')
+      .map(
+        a => a
+          .split(' ')
+          .map(
+            b => ref[b]
+          ).join('')
+      ).join(' ');
+  }
+  
+  
+
+  const res = ()=>{
+    setResultant(decodeMorse(val)) ;
+  }
 
   // Adding Effect
   const [firstLoad, setFirstLoad] = useState(1);
@@ -235,7 +189,6 @@ export default function Home() {
             }}
           />
           <input type="text" className="showText" value={resultant} />
-          <button onClick={resultHandler} >Click</button>
         </div>
 
         <div className="body">
