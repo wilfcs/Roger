@@ -25,14 +25,11 @@ export default function Home() {
     if (e.type == "mousedown") {
       startClick = e.timeStamp;
     } else if (e.type == "mouseup" && startClick > 0) {
-      if (e.timeStamp - startClick > 500) {
-        if (parseInt(s) - parseInt(time) >= 2.5) {
-          setVal(`${val} /-`);
-          const d = new Date();
-          let s = d.getSeconds();
-          setTime(s);
-          res(val);
-        } else if (parseInt(s) - parseInt(time) >= 1.5) {
+      if(e.timeStamp - startClick > 5000){
+        readOut(resultant)
+      }
+      else if (e.timeStamp - startClick > 500) {
+         if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} -`);
           const d = new Date();
           let s = d.getSeconds();
@@ -45,14 +42,7 @@ export default function Home() {
           setTime(s);
         }
       } else {
-        // if (parseInt(s) - parseInt(time) >= 2.5) {
-        //   setVal(`${val} /.`);
-        //   const d = new Date();
-        //   let s = d.getSeconds();
-        //   setTime(s);
-        //   res(val);
-        // }
-        if (parseInt(s) - parseInt(time) >= 1.5) {
+         if (parseInt(s) - parseInt(time) >= 1.5) {
           setVal(`${val} .`);
           const d = new Date();
           let s = d.getSeconds();
@@ -175,10 +165,9 @@ export default function Home() {
     });
   }, [firstLoad]);
 
-  const check = () => {
-    console.log("helllo g Hello");
+  const readOut = (value) => {
     var msg = new SpeechSynthesisUtterance();
-  msg.text = "Hello, I am Roger. Tap the button in the center to register a dot, hold the button for 1 second to register a dash. click the button on the bottom right to go to tutorials page. Thankyou hahahaha.";
+  msg.text = value;
   
   var voices = window.speechSynthesis.getVoices();
   msg.voice = voices[0]; 
@@ -188,6 +177,9 @@ export default function Home() {
 
 window.speechSynthesis.speak(msg);
   }
+
+  // Hey, I am Roger. Here are quick instructions to use my services. There is a big button in the center to register your morse code.
+// There is a small button on the bottom right cornor of your screen to go to tutorial's page. Thankyou hahahaha
   return (
     <>
       {/* <Head><link rel="preconnect" href="https://fonts.googleapis.com"/>
